@@ -71,4 +71,43 @@
       });
     });
   }
+  // Project starter interactions and quote-form prefill.
+  const briefOptions = document.querySelectorAll("[data-brief]");
+  const briefCopy = {
+    print: { title: "Let's plan your print.", copy: "Tell us what you need printed, the quantity and when you need it.", service: "Digital or offset printing", detail: "I'm interested in print materials.\nItem(s): \nQuantity: \nDeadline: " },
+    brand: { title: "Let's shape your brand.", copy: "Share your business, audience and where the design will appear.", service: "Graphic design and branding", detail: "I'm interested in graphic design and branding.\nBusiness/project: \nAudience: \nWhat I need designed: " },
+    signage: { title: "Let's make you visible.", copy: "Tell us where the sign or display will be used and the approximate size.", service: "Signs or large-format printing", detail: "I'm interested in signs or large-format printing.\nType/location: \nApproximate size: \nDeadline: " },
+    campaign: { title: "Let's build the campaign.", copy: "Tell us what you're promoting, who it's for and which materials you have in mind.", service: "Promotional materials", detail: "I'm interested in promotional or campaign materials.\nCampaign/event: \nMaterials: \nQuantity/deadline: " }
+  };
+  briefOptions.forEach(option => option.addEventListener("click", () => {
+    const item = briefCopy[option.dataset.brief];
+    if (!item) return;
+    briefOptions.forEach(button => {
+      const active = button === option;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+    const title = document.querySelector("#brief-result-title");
+    const copy = document.querySelector("#brief-result-copy");
+    const link = document.querySelector("#brief-result-link");
+    const step = document.querySelector("#brief-step");
+    if (title) title.textContent = item.title;
+    if (copy) copy.textContent = item.copy;
+    if (step) step.textContent = "DIRECTION SELECTED";
+    if (link) link.href = "contact.html?service=" + encodeURIComponent(item.service) + "&brief=" + encodeURIComponent(item.detail) + "#quote";
+  }));
+
+  if (form) {
+    const params = new URLSearchParams(window.location.search);
+    const serviceSelect = form.querySelector('[name="service"]');
+    const detailsField = form.querySelector('[name="details"]');
+    const serviceParam = params.get("service");
+    const briefParam = params.get("brief");
+    if (serviceSelect && serviceParam) {
+      const match = Array.from(serviceSelect.options).find(option => option.text.trim() === serviceParam);
+      if (match) serviceSelect.value = match.value;
+    }
+    if (detailsField && briefParam && !detailsField.value) detailsField.value = briefParam;
+  }
+
 })();
