@@ -97,6 +97,8 @@
     if (link) link.href = "contact.html?service=" + encodeURIComponent(item.service) + "&brief=" + encodeURIComponent(item.detail) + "#quote";
   }));
 
+  if (briefOptions.length) briefOptions[0].click();
+
   if (form) {
     const params = new URLSearchParams(window.location.search);
     const serviceSelect = form.querySelector('[name="service"]');
