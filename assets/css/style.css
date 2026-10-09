@@ -122,3 +122,43 @@
   .hero-art{height:390px}
   .hero h1{font-size:clamp(60px,15vw,86px)}
 }
+
+/* Interactive project starter and service FAQs */
+.brief-builder{background:#262044;color:#fffdf7;padding:100px 0;position:relative;overflow:hidden}
+.brief-builder:before{content:"";position:absolute;width:500px;height:500px;border:1px solid #d8ff5538;border-radius:50%;right:-170px;top:-210px;pointer-events:none}
+.brief-builder-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:80px;align-items:center;position:relative}
+.brief-intro .eyebrow{color:#d8c8ff}.brief-intro .eyebrow-line{background:#d8ff55}
+.brief-intro h2{font:800 clamp(42px,5.2vw,65px)/.98 var(--display);letter-spacing:-.085em;margin:22px 0;color:#fffdf7}
+.brief-intro h2 em{font-style:normal;color:#d8ff55}
+.brief-intro>p{font-size:13px;line-height:1.9;color:#c3bfd4;max-width:350px}
+.brief-note{display:flex;align-items:center;gap:10px;margin-top:36px;font-size:9px;letter-spacing:.14em;font-weight:800;color:#d8c8ff}
+.brief-note-dot{width:7px;height:7px;background:#d8ff55;border-radius:50%;box-shadow:0 0 0 5px #d8ff5518}
+.brief-tool{background:#fffdf7;color:#262044;border:1px solid #d8c8ff22;box-shadow:12px 12px 0 #d8ff55}
+.brief-tool-top,.brief-tool-bottom{display:flex;justify-content:space-between;gap:10px;padding:15px 20px;font-size:8px;letter-spacing:.12em;font-weight:800}
+.brief-tool-top{border-bottom:1px solid #e4dfeb;color:#6d687b}.brief-tool-top span:last-child{color:#6e7f2d}
+.brief-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:16px}
+.brief-option{display:grid;grid-template-columns:40px 1fr 20px;gap:11px;align-items:center;text-align:left;border:1px solid #e2dce8;background:#fbf9f4;padding:15px 12px;color:#262044;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.brief-option:hover{transform:translateY(-2px);border-color:#262044}
+.brief-option.active{background:#d8ff55;border-color:#262044;box-shadow:3px 3px 0 #262044}
+.brief-option-icon{width:38px;height:38px;display:grid;place-items:center;background:#e8e0fa;font-size:20px}
+.brief-option strong{display:block;font:700 12px var(--display)}.brief-option small{display:block;font-size:9px;line-height:1.5;color:#716c7d;margin-top:5px}
+.brief-check{font-size:15px;opacity:.35}.brief-option.active .brief-check{opacity:1}
+.brief-result{display:flex;align-items:center;justify-content:space-between;gap:22px;margin:0 16px;padding:20px;background:#f1edf8}
+.brief-result-label{font-size:8px;letter-spacing:.14em;font-weight:800;color:#777084}
+.brief-result h3{font:800 22px/1.2 var(--display);letter-spacing:-.05em;margin:7px 0;color:#262044}
+.brief-result p{font-size:11px;line-height:1.7;color:#6c687b;margin:0;max-width:310px}
+.brief-result .button{flex-shrink:0;font-size:10px;padding:13px 14px;gap:12px}
+.brief-tool-bottom{color:#777084;padding-top:18px}
+.faq-section{background:#f1edf8}
+.faq-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:90px;align-items:start}
+.faq-grid h2{font:800 clamp(38px,4.5vw,56px)/1 var(--display);letter-spacing:-.08em;color:#262044;margin:20px 0}
+.faq-grid h2 em{font-style:normal;color:#7b6ca8}
+.faq-grid>div:first-child>p{font-size:13px;color:#716c7d;line-height:1.8;max-width:320px;margin-bottom:25px}
+.faq-list details{border-bottom:1px solid #d7d0e1}.faq-list details:first-child{border-top:1px solid #d7d0e1}
+.faq-list summary{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:21px 0;cursor:pointer;list-style:none;font:700 14px/1.5 var(--display);color:#262044}
+.faq-list summary::-webkit-details-marker{display:none}.faq-list summary span{font:400 24px var(--sans);transition:transform .2s}
+.faq-list details[open] summary span{transform:rotate(45deg)}
+.faq-list details p{font-size:12px;line-height:1.9;color:#6c687b;max-width:620px;margin:0;padding:0 30px 22px 0}
+#contact-whatsapp{color:#6b7c22}
+@media(max-width:900px){.brief-builder-grid,.faq-grid{grid-template-columns:1fr;gap:38px}.brief-intro>p{max-width:520px}.faq-grid{gap:25px}}
+@media(max-width:600px){.brief-builder{padding:65px 0}.brief-options{grid-template-columns:1fr;padding:12px}.brief-result{display:block;margin:0 12px;padding:17px}.brief-result .button{margin-top:17px;width:100%}.brief-tool-top,.brief-tool-bottom{font-size:7px;padding:13px}.brief-option{padding:12px}.faq-list summary{font-size:13px;padding:18px 0}}
