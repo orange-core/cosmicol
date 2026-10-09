@@ -5,6 +5,7 @@ Responsive multi-page website for Cosmicol Limited, a printing and creative-serv
 ## Pages
 - `index.html` — home, service overview, approach and project CTA
 - `services.html` — digital/offset printing, design and branding, signage/large-format printing, promotional materials
+- `showcase.html` — filterable creative gallery for print, identity, large-format and campaign concepts
 - `about.html` — company introduction and working principles
 - `contact.html` — contact details, hours, map directions and project enquiry form
 
@@ -26,6 +27,7 @@ Public directory listings identify Cosmicol Limited in Ndola, Zambia, and list d
 ## Before launch
 - Confirm all business contact details and opening hours with the client.
 - Replace any service examples that do not match current offerings.
+- Replace the showcase's clearly identified illustrative reference images with approved photos of Cosmicol's actual completed client work before presenting it as a past-work portfolio.
 - Add approved project photographs, print samples and brand assets.
 - Test links and form behaviour on mobile and desktop.
 - Configure the chosen domain and hosting.
