@@ -53,4 +53,22 @@
       window.location.href = "mailto:cosmicol.digital@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
     });
   }
+
+  const workFilters = document.querySelectorAll("[data-work-filter]");
+  const workCards = document.querySelectorAll("[data-work-category]");
+  if (workFilters.length && workCards.length) {
+    workFilters.forEach(filter => {
+      filter.addEventListener("click", () => {
+        const category = filter.dataset.workFilter;
+        workFilters.forEach(button => {
+          const active = button === filter;
+          button.classList.toggle("active", active);
+          button.setAttribute("aria-pressed", String(active));
+        });
+        workCards.forEach(card => {
+          card.hidden = category !== "all" && card.dataset.workCategory !== category;
+        });
+      });
+    });
+  }
 })();
